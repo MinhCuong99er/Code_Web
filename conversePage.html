@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Footgear project</title>
+      <meta name="keywords" content=""/>
+      <meta name="description" content=""/>
+      <!-- Fav Icon -->
+      <link id="favicon" rel="Icon" type="image/png" href="images/favicon.ico">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- FontAwesome -->
+      <link href="css/font-awesome.min.css" rel="stylesheet">
+      <!-- Style CSS -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/styleListproduct.css">
+      <script src="js/library/jquery-3.2.1.min.js"></script>
+      <script src="js/library/bootstrap.min.js"></script>
+      <script src="js/config/event2.js"></script>
+      <script src="js/function/listProduct2.js"></script>
+      <script src="js/config/menuEvent.js"></script>
+      <style>
+         * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         }
+         #btn-login {
+         cursor: pointer;
+         }
+         .product {
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Header Top-bar -->
+      <div class="top-bar">
+         <div class="container">
+            <div class="row">
+               <div class="logo col-sm-6">
+                  <a href="#" class="logo"><img src="images/Logo.png" alt="logo"/></a>
+               </div>
+               <div class="col-sm-6">
+                  <div class="row" style="margin-top: 2%; margin-bottom: 2%">
+                     <span class="float-right" id="btn-login">Login / Register</span>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-8 col-xs-8" style="padding-right: 0;padding-left: 0;">
+                        <div class="search">
+                           <input type="search" id="search" placeholder="Enter your search here"/>
+                           <button class="icon"><i class="fa fa-search float-right"></i></button>
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-xs-4" style="padding-right: 0;padding-left: 0;">
+                        <div class="cart">
+                           <span class="cart-text">0 ITEMS</span>
+                           <span class="float-right"><a href="#" class="fa fa-shopping-cart"></a></span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Header main-menu -->
+      <div class="main-menu">
+         <div class="container">
+            <nav class="navbar navbar-inverse">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                  </button>
+                  <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo"/></a>
+               </div>
+               <div class="navbar-collapse collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                     <li class="dropdown" id="f">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">MAN <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">WOMAN <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">KID <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="#" class="new-arrival">NEW ARRIVAL</a></li>
+                     <li><a href="#" class="sale">SALE</a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!--phần chi tiết danh sách các sản phẩm-->
+      <div class="body-list-product" style="clear: both">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 col-sm-3" style="border:1px solid lightgray;padding: 0;clear: both">
+                  <div class="header-filter"
+                     style="color: white;background-color: #121212;height: 40px;line-height: 40px;cursor: pointer;font-weight: bold;text-indent: 2%">
+                     FILTER PRODUCT
+                  </div>
+                  <!--loc san pham theo ten nha san xuat-->
+                  <div class="filter-producer" style="cursor: pointer">
+                     <div class="header-producer"
+                        style="height: 40px;line-height: 40px;clear: both;border-top: 1px solid;border-bottom: 1px solid">
+                        <p style="float: left;font-weight: bold; text-indent: 5%">PRODUCER</p>
+                        <p style="float: right"><span class="glyphicon glyphicon-chevron-down hide-show-producer"
+                           style="font-size: 20px" data-check="show"></span></p>
+                     </div>
+                     <div class="body-producer">
+                        <ul class="list-group" style="margin-top: 10px">
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 NIKE
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 VANS
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 KAPPA
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 ADIDAS
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" checked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 CONVERSE
+                                 </label>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--kết thúc lọc theo PRODUCER-->
+                  <!--lọc theo model-->
+                  <div class="filter-model" style="cursor: pointer">
+                     <div class="header-model"
+                        style="height: 40px;line-height: 40px;clear: both;border-top: 1px solid;border-bottom: 1px solid">
+                        <p style="float: left;font-weight: bold; text-indent: 5%">MODEL</p>
+                        <p style="float: right"><span class="glyphicon glyphicon-chevron-down hide-show-model"
+                           style="font-size: 20px" data-check="show"></span></p>
+                     </div>
+                     <div class="body-model">
+                        <ul class="list-group" style="margin-top: 10px">
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Old Skool
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" checked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Califoria
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Camo
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Classic
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Era
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Iso
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Off the wall
+                                 </label>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--kết thúc lọc theo model-->
+                  <!--lọc theo SIZE-->
+                  <div class="filter-size" style="cursor: pointer">
+                     <div class="header-size"
+                        style="height: 40px;line-height: 40px;clear: both;border-top: 1px solid;border-bottom: 1px solid">
+                        <p style="float: left;font-weight: bold; text-indent: 5%"> SIZE</p>
+                        <p style="float: right"><span class="glyphicon glyphicon-chevron-down hide-show-size"
+                           style="font-size: 20px" data-check="show"></span></p>
+                     </div>
+                     <div class="body-size">
+                        <ul class="list-group" style="margin-top: 10px">
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 XS
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 S
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" checked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 M
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 L
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 XL
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 XXL
+                                 </label>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--kết thúc lọc theo SIZE-->
+                  <div class="filter-color" style="cursor: pointer">
+                     <div class="header-color"
+                        style="height: 40px;line-height: 40px;clear: both;border-top: 1px solid;border-bottom: 1px solid">
+                        <p style="float: left;font-weight: bold; text-indent: 5%">COLOR</p>
+                        <p style="float: right"><span class="glyphicon glyphicon-chevron-down hide-show-color"
+                           style="font-size: 20px" data-check="show"></span></p>
+                     </div>
+                     <div class="body-color">
+                        <ul class="list-group" style="margin-top: 10px">
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Black
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Blue
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" checked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Brown
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Mutil
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 Yellow
+                                 </label>
+                              </div>
+                           </li>
+                           <li class="list-group-item" style="padding: 0px;">
+                              <div class="checkbox">
+                                 <label style="font-size: 1.2em">
+                                 <input type="checkbox" value="" unchecked>
+                                 <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                 White
+                                 </label>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--lọc theo màu sắc-->
+               </div>
+               <div class="col-xs-12 col-sm-9" style="padding-left: 5px;padding-right: 0">
+                  <div class="header-filter"
+                     style="color: white;background-color: #121212;text-indent: 2%; height: 40px;line-height: 40px;cursor: pointer;font-weight: bold;">
+                     LIST OF DETAILS PRODUCT
+                  </div>
+                  <!-- phần hình ảnh panner quảng cáo 100%size -->
+                  <div class="img-panner" style="margin-bottom: 10px;">
+                     <img src="images/panner1.jpg">
+                  </div>
+                  <div class="image-quangcao">
+                     <div class="row">
+                        <div class="col-xs-12 col-sm-4">
+                           <img src="images/producer1.jpg">
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                           <img src="images/producer2.jpg">
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                           <img src="images/producer3.jpg">
+                        </div>
+                     </div>
+                  </div>
+                  <!--phần chính - danh sách các sản phẩm -->
+                  <div class="list-product" style="margin-top: 10px;">
+                     <div class="col-xs-12" style="padding:0">
+                        <p style="background-color: #121212;width: 100%;height: 40px;line-height: 40px;text-indent: 2%;font-weight: bold;color: white;margin-bottom: 15px;">
+                           CONVERSE
+                        </p>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 405px" id="pro1">
+                        <div class="sanpham" id="sanpham1">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma1.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma2.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/puma4.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/puma5.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Puma Old Skool Platform - Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0; height: 405px" id="pro2">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma5.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma6.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/puma7.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/puma8.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Converse Old Skool Platform - Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 405px" id="pro3">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma9.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/puma10.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/puma12.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/puma13.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Converse Old Skool Platform - Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                        <div class="sanpham" id="sanpham1">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham2.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham4.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/sanpham3.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/sanpham1.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0; height: 385px" id="pro2">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham5.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham6.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/sanpham3.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/sanpham2.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now</button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 405px" id="pro3">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham4.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/sanpham4.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/sanpham3.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/sanpham3.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Converse Old Skool Platform -
+                                 Women
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now
+                                 </button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro1">
+                        <div class="sanpham" id="sanpham1">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike1.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike2.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/nike3.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/nike4.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Nike Old Skool Platform - Men
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now
+                                 </button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0; height: 385px" id="pro2">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike5.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike7.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/nike8.jpg" style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/nike9.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Nike Old Skool Platform - Men
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now
+                                 </button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-4 product" style=";padding:0;height: 385px" id="pro3">
+                        <div class="sanpham">
+                           <!--phần đầu chứa hình ảnh của sản phẩm-->
+                           <div class="header-image-product" style=";clear: both;height: 200px">
+                              <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                                 <div class="box box1"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike11.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box2"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                                    <img src="images/nike12.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                                 <div class="box box3"
+                                    style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                                    <img src="images/nike13.jpg"
+                                       style="display: block;width: 40px;height: 40px;"
+                                       class="img-responsive">
+                                 </div>
+                              </div>
+                              <div classa="right" style="width: 80%;;float:left">
+                                 <img src="images/nike14.jpg" class="img-responsive img-change">
+                              </div>
+                           </div>
+                           <!--kết thúc phần đầu của sản phẩm-->
+                           <!--phần thông tin của sản phẩm-->
+                           <br>
+                           <br>
+                           <div class="info-product" align="center">
+                              <p class="name-product" style="font-weight: bold">Nike Old Skool Platform - Kid
+                                 Shoes
+                              </p>
+                              <p class]="price-product">$110</p>
+                              <p class="list-start">
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                                 <span style="margin-right: 3px;font-size: 22px;"
+                                    class="glyphicon glyphicon-star-empty"></span>
+                              </p>
+                              <!--các nút yêu cầu mua hàng và View Product sản phẩm-->
+                              <p class="footer-product">
+                                 <button type="button" class="btn btn-success btn-click-muahang">Shop Now
+                                 </button>
+                                 <button type="button" class="btn btn-info btn-click-xem-chi-tiet">View Product
+                                 </button>
+                              </p>
+                           </div>
+                           <!--kết thúc phần thông tin của sản phầm-->
+                        </div>
+                     </div>
+                  </div>
+                  <!--kết thúc phần danh sách các sản phầm-->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--kết thúc phần chi tiết  danh sách các sản phẩm -->
+      <!-- phần footer-->
+      <div class="footer" >
+         <div class="container">
+            <div class="row">
+               <div class="col-md-3">
+                  <a class="hd" href="">CUSTOMER SERVICE</a>
+                  <a href="">Contact Us</a>
+                  <a href="">Online Shopping</a>
+                  <a href="">Shipping and Delivery</a>
+                  <a href="">My Orders</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">ABOUT</a>
+                  <a href="">Terms & Conditions</a>
+                  <a href="">Privacy Policy</a>
+                  <a href="">Sitemap</a>
+                  <a href="">Right of Withdrawal</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">SNEAKER CENTRAL</a>
+                  <a href="">About Foot Locker</a>
+                  <a href="">Press Contacts</a>
+                  <a href="">Store Locator</a>
+                  <a href="">All Stores</a>
+                  <a href="">Newsletter</a>
+                  <a href="">Careers</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">PAYMENT METHODS</a>
+                  <div class="row" style="margin-top: 5%">
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page1.png" alt="" style="border:  1px solid black;">
+                     </div>
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page2.png" alt="" style="border:  1px solid black;">
+                     </div>
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page3.png" alt="" style="border:  1px solid black;">
+                     </div>
+                  </div>
+                  <div class="row" style="text-align:  center;margin-top: 5%;">
+                     <img src="images/map.png" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--kết thúc phần footer-->
+   </body>
+</html>

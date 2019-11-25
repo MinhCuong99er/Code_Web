@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Footgear project</title>
+      <meta name="keywords" content=""/>
+      <meta name="description" content=""/>
+      <!-- Fav Icon -->
+      <link id="favicon" rel="Icon" type="image/png" href="images/favicon.ico">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- FontAwesome -->
+      <link href="css/font-awesome.min.css" rel="stylesheet">
+      <!-- Style CSS -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/styleproductDetail.css">
+      <link rel="stylesheet" type="text/css" href="css/styleRating.css">
+      <!--link thư viên -->
+      <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+      <script src="js/library/jquery-3.2.1.min.js"></script>
+      <script src="js/library/bootstrap.min.js"></script>
+      <script src="js/config/event2.js"></script>
+      <script src="js/library/jquery-emoji-ratings-master/dist/jquery.emojiRatings.min.js"></script>
+      <script src="js/library/product-preview-slider/js/jquery.mobile.min.js"></script>
+      <script src="js/library/product-preview-slider/js/main.js"></script>
+      <script src="js/library/product-preview-slider/js/modernizr.js"></script>
+      <script src="js/function/productDetails3.js"></script>
+      <script src="js/config/menuEvent.js"></script>
+      <script src="js/function/rating.js"></script>
+      <style>
+         * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         }
+         #btn-login {
+         cursor: pointer;
+         }
+         .box-size-pro {
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Header Top-bar -->
+      <div class="top-bar">
+         <div class="container">
+            <div class="row">
+               <div class="logo col-sm-6">
+                  <a href="#" class="logo"><img src="images/Logo.png" alt="logo"/></a>
+               </div>
+               <div class="col-sm-6">
+                  <div class="row" style="margin-top: 2%; margin-bottom: 2%">
+                     <span class="float-right" id="btn-login">Login / Register</span>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-8 col-xs-8" style="padding-right: 0;padding-left: 0;">
+                        <div class="search">
+                           <input type="search" id="search" placeholder="Enter your search here"/>
+                           <button class="icon"><i class="fa fa-search float-right"></i></button>
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-xs-4" style="padding-right: 0;padding-left: 0;">
+                        <div class="cart">
+                           <span class="cart-text"><span class="count">0</span><span> ITEMS</span></span>
+                           <span class="float-right"><a href="#" class="fa fa-shopping-cart"></a></span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Header main-menu -->
+      <div class="main-menu">
+         <div class="container">
+            <nav class="navbar navbar-inverse">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                  </button>
+                  <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo"/></a>
+               </div>
+               <div class="navbar-collapse collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                     <li class="dropdown" id="f">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">MAN <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">WOMAN <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">KID <i class="fa fa-angle-double-down"></i><i class="fa fa-angle-double-up"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="adidas">Adidas</a></li>
+                           <li><a href="#" class="van">Van</a></li>
+                           <li><a href="#" class="converse">Converse</a></li>
+                           <li><a href="#" class="nike">Nike</a></li>
+                           <li><a href="#" class="palladium">Palladium</a></li>
+                           <li><a href="#" class="jordan">Jordan</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="#" class="new-arrival">NEW ARRIVAL</a></li>
+                     <li><a href="#" class="sale">SALE</a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- phần xem chi tiết  sản phẩm-->
+      <div class="product-detail">
+         <div class="container">
+            <div class="row">
+               <p style="height: 40px;background-color: #d7d7d7;line-height: 40px;color: #121212;text-indent: 1%;">HOME > NIKE > MENSHOES
+               </p>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <!--phần bên trái hiển thị  hình ảnh sản phẩm-->
+               <div class="col-xs-12 col-sm-7" style="padding:0">
+                  <!--nơi chứa hình ảnh chính ( slide trượt-->
+                  <div class="img-top" style="width: 100%;overflow: hidden">
+                     <img src="images/anhchitiet3.1.png" alt="..." class="img-responsive img-top-change"
+                        style="display: block;">
+                  </div>
+                  <!--kết thúc  phần trượt sản phẩm-->
+                  <!--phần chứa ảnh chi tiết của prodcut-->
+                  <div class="img-detail-part"
+                     style="margin-top: 5%;border-top: 1px solid lightgray;padding: 10px 0px 10px 0px;clear: both;">
+                     <div class="box-detail box-detail1"
+                        style="width:80px; height: 80px;display: inline-block;margin-right: 15px;">
+                        <img src="images/anhchitiet31.png" style="width: 70px;height: 70px;display: block;"
+                           class="image-detail img-responsive">
+                     </div>
+                     <div class="box-detail box-detail2"
+                        style="width:80px; height: 80px;display: inline-block;margin-right: 15px;">
+                        <img src="images/anhchitiet32.png" style="width: 70px;height: 70px;display: block;"
+                           class="image-detail img-responsive">
+                     </div>
+                     <div class="box-detail box-detail3"
+                        style="width:80px; height: 80px;display: inline-block;margin-right: 15px;">
+                        <img src="images/anhchitiet33.png" style="width: 70px;height: 70px;display: block;"
+                           class="image-detail img-responsive">
+                     </div>
+                     <div class="box-detail box-detail4"
+                        style="width:80px; height: 80px;display: inline-block;margin-right: 15px;">
+                        <img src="images/anhchitiet31.png" style="width: 70px;height: 70px;display: block;"
+                           class="image-detail img-responsive">
+                     </div>
+                  </div>
+                  <!--các sản phẩm cùng loại-->
+                  <div class="other-product" style="margin-top: 50px;padding-bottom: 20px;">
+                     <p class="title" style="font-size: 22px;font-weight: bold;">
+                        OTHER COLORS
+                     </p>
+                     <div class="list-other-product" style="clear: both">
+                        <div class="other other1"
+                           style="width: 180px;height: 180px;float: left;margin-right: 70px;cursor: pointer">
+                           <img src="images/sanpham8.jpg" style="display: inline-block;width: 180px;height: 180px;">
+                        </div>
+                     </div>
+                     <div class="list-other-product" style="">
+                        <div class="other other2" style="width: 180px;height: 180px;float: left;;cursor: pointer">
+                           <img src="images/sanpham9.jpg" style="display: inline-block;width: 180px;height: 180px;">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!--kết thúc phần hiển  thị hình ảnh-->
+               <!--phần bên phải hiển thi thông tin sản phẩm-->
+               <div class="col-xs-12 col-sm-5" style=";">
+                  <!-- phần chứa logo của sản ;phẩm -->
+                  <div class="logo" style="height: 100px;width: 100px">
+                     <img src="images/logonike.jpg" style="display: block;width: 100px;height: 100px">
+                  </div>
+                  <div class="info-product" style="">
+                     <p class="name-product" style="font-size: 25px; font-weight: 700">Nike Air Force 1 Ultraforce Hi - Men Shoes</p>
+                     <p class="price" style="font-size: 28px">$110</p>
+                     <h2 style="font-size: 18px; font-weight: 700">
+                        Product details for Nike Air Force 1 Ultraforce Hi - Men Shoes
+                     </h2>
+                     <p>
+                        Color: Dk Team Red-Summit White-Dk Team Red<br>
+                        Color: Dk Team Red-Summit White-Dk Team Red<br/>
+                        Material: Suede<br/>
+                        Product Code: 314107174204
+                     </p>
+                     <div class="binhchon">
+                        <p>
+                           Product Reviews <i>(Click on the star)</i>
+                        </p>
+                        <div id="rating1">
+                           <label>Rating</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Rating
+                        <span class="review-text" style="display:none"><span
+                           id="starCount"></span> Star</span>
+                        </button>
+                     </div>
+                     <!-- khu vực lựa chọn kích thước sản phẩm -->
+                     <div class="choose-size-product" style="margin-top: 10px">
+                        <p style="font-weight: bold;">Size Selection</p>
+                        <div class="btn-group">
+                           <button type="button" class="btn btn-default btn-lg btn-s">S</button>
+                           <button type="button" class="btn btn-success btn-lg btn-m">M</button>
+                           <button type="button" class="btn btn-info btn-lg btn-l">L</button>
+                           <button type="button" class="btn btn-primary btn-lg btn-xl">XL</button>
+                           <button type="button" class="btn btn-danger btn-lg btn-xxl">XXL</button>
+                        </div>
+                        <div class="box-size" style="margin-top: 10px">
+                           <div class="box-size-pro box1"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              45
+                           </div>
+                           <div class="box-size-pro box2"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              46
+                           </div>
+                           <div class="box-size-pro box3"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              47
+                           </div>
+                           <div class="box-size-pro box4"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              48
+                           </div>
+                           <div class="box-size-pro box5"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              49
+                           </div>
+                           <div class="box-size-pro box6"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              50
+                           </div>
+                           <div class="box-size-pro box7"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              51
+                           </div>
+                           <div class="box-size-pro box9"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              52
+                           </div>
+                           <div class="box-size-pro box7"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              51
+                           </div>
+                           <div class="box-size-pro box9"
+                              style="width: 45px;height: 45px;display: inline-block;border:1px solid gray;border-radius: 4px;text-align: center;line-height: 42px;margin-right: 15px;margin-bottom: 10px">
+                              52
+                           </div>
+                        </div>
+                        <div class="add-to-cart">
+                           <button class="btn btn-success btn-lg btn-block btn-click-add-to-cart disabled">
+                           ADD TO CART
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!--kết thúc phần phía bên phải-->
+            </div>
+         </div>
+      </div>
+      <div class="list-product-hot">
+      <div class="container">
+      <div class="row"
+         style="margin-top: 15px;border-top: 1px solid;border-bottom: 1px solid;padding:10px 0px 10px 0px;">
+         <h2>You May Also Like</h2>
+         <div class="col-xs-12 col-sm-3">
+            <div class="sanpham" id="sanpham1">
+               <!--phần đầu chứa hình ảnh của sản phẩm-->
+               <div class="header-image-product" style=";clear: both;height: 220px">
+                  <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                     <div class="box box1"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/sanpham2.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box2"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/sanpham4.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box3"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                        <img src="images/sanpham3.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                  </div>
+                  <div classa="right" style="width: 80%;;float:left">
+                     <img src="images/sanpham1.jpg" class="img-responsive img-change">
+                  </div>
+               </div>
+               <!--kết thúc phần đầu của sản phẩm-->
+               <!--phần thông tin của sản phẩm-->
+               <br>
+               <br>
+               <div class="info-product" align="center">
+                  <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Men
+                     Shoes
+                  </p>
+                  <p class="price-product" style="color: #121212; font-weight: bold;font-size: 17px">$110</p>
+                  <div id="rating2" style="margin-bottom: 20px">
+                     <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                           <li class='star' title='Poor' data-value='1'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Fair' data-value='2'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Good' data-value='3'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Excellent' data-value='4'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='WOW!!!' data-value='5'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--các nút yêu cầu mua hàng và xem chi tiết sản phẩm-->
+               </div>
+               <!--kết thúc phần thông tin của sản phầm-->
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-3" style="padding: 0;">
+            <div class="sanpham" id="sanpham2">
+               <!--phần đầu chứa hình ảnh của sản phẩm-->
+               <div class="header-image-product" style=";clear: both;height: 220px">
+                  <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                     <div class="box box1"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/giaynu1.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box2"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/giaynu3.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box3"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                        <img src="images/giaynu4.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                  </div>
+                  <div classa="right" style="width: 80%;;float:left">
+                     <img src="images/giaynu2.jpg" class="img-responsive img-change">
+                  </div>
+               </div>
+               <!--kết thúc phần đầu của sản phẩm-->
+               <!--phần thông tin của sản phẩm-->
+               <br>
+               <br>
+               <div class="info-product" align="center">
+                  <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Women
+                     Shoes
+                  </p>
+                  <p class="price-product" style="color: #121212; font-weight: bold;font-size: 17px">$110</p>
+                  <div id="rating3" style="margin-bottom: 20px">
+                     <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                           <li class='star' title='Poor' data-value='1'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Fair' data-value='2'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Good' data-value='3'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Excellent' data-value='4'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='WOW!!!' data-value='5'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--các nút yêu cầu mua hàng và xem chi tiết sản phẩm-->
+               </div>
+               <!--kết thúc phần thông tin của sản phầm-->
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-3" style="padding: 0;">
+            <div class="sanpham" id="sanpham3">
+               <!--phần đầu chứa hình ảnh của sản phẩm-->
+               <div class="header-image-product" style=";clear: both;height: 220px">
+                  <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                     <div class="box box1"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/kid1.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box2"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/kid2.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box3"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                        <img src="images/kid3.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                  </div>
+                  <div classa="right" style="width: 80%;;float:left">
+                     <img src="images/kid4.jpg" class="img-responsive img-change">
+                  </div>
+               </div>
+               <!--kết thúc phần đầu của sản phẩm-->
+               <!--phần thông tin của sản phẩm-->
+               <br>
+               <br>
+               <div class="info-product" align="center">
+                  <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Kid
+                     Shoes
+                  </p>
+                  <p class="price-product" style="color: #121212; font-weight: bold;font-size: 17px">$110</p>
+                  <div id="rating4" style="margin-bottom: 20px">
+                     <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                           <li class='star' title='Poor' data-value='1'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Fair' data-value='2'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Good' data-value='3'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Excellen' data-value='4'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='WOW' data-value='5'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--các nút yêu cầu mua hàng và xem chi tiết sản phẩm-->
+               </div>
+               <!--kết thúc phần thông tin của sản phầm-->
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-3" style="padding: 0;">
+            <div class="sanpham" id="sanpham4">
+               <!--phần đầu chứa hình ảnh của sản phẩm-->
+               <div class="header-image-product" style=";clear: both;height: 220px">
+                  <div class="left" style="width: 20%;;height: 200px;float:left;padding-left: 10px">
+                     <div class="box box1"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/sanpham5.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box2"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both;">
+                        <img src="images/sanpham7.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                     <div class="box box3"
+                        style="width: 40px;height: 42px;;margin-bottom: 10px;clear: both">
+                        <img src="images/sanpham2.jpg" style="display: block;width: 40px;height: 40px;"
+                           class="img-responsive">
+                     </div>
+                  </div>
+                  <div classa="right" style="width: 80%;;float:left">
+                     <img src="images/sanpham6.jpg" class="img-responsive img-change">
+                  </div>
+               </div>
+               <!--kết thúc phần đầu của sản phẩm-->
+               <!--phần thông tin của sản phẩm-->
+               <br>
+               <br>
+               <div class="info-product" align="center">
+                  <p class="name-product" style="font-weight: bold">Vans Old Skool Platform - Men
+                     Shoes
+                  </p>
+                  <p class="price-product" style="color: #121212; font-weight: bold;font-size: 17px">$110</p>
+                  <div id="rating5" style="margin-bottom: 20px">
+                     <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                           <li class='star' title='Poor' data-value='1'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Fair" data-value='2'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Good' data-value='3'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='Excellen' data-value='4'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                           <li class='star' title='WOW' data-value='5'>
+                              <i class='fa fa-star fa-fw'></i>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!--các nút yêu cầu mua hàng và xem chi tiết sản phẩm-->
+               </div>
+               <!--kết thúc phần thông tin của sản phầm-->
+            </div>
+         </div>
+      </div>
+      <!--kết thúc phần xem chi tiết sản phẩm-->
+      <!-- phần model hiển thị các sản phẩm đang có trong giỏ hàng-->
+      <div class="modal fade" id="cart-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                     class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel">
+                     DETAILS SHOP
+                  </h4>
+               </div>
+               <div class="modal-body">
+                  <div class="top-model" style="overflow: hidden;border-bottom: 1px solid lightgray;">
+                     <div class="top-left-model" style="width: 40%;;float: left;">
+                        <img src="images/sanpham6.jpg" class="img-model"
+                           style="display: block;width: 200px;height: 200px;">
+                     </div>
+                     <div class="top-right-model" style="width: 60%;float: left;margin-left: -20px">
+                        <h4>
+                           Nike Air Force 1 Ultraforce Hi - Men Shoes<br/>
+                        </h4>
+                        <p>
+                           Amount:1 <br/>
+                           Color: White<br/>
+                           Size :39
+                        </p>
+                     </div>
+                  </div>
+                  <!--kết thúc phần đầu-->
+                  <div class="body-model"
+                     style="margin-top: 10px;padding-bottom: 15px;border-bottom: 1px solid lightgray;">
+                     <span><strong>Transport fee:</strong> <span>FREE</span></span> <br/>
+                     <span><strong>
+                     TOTAL AMOUNT:</strong><span>  $110</span></span>
+                     <br>
+                     <br>
+                     <button class="btn btn-success btn-click-view-cart btn-block">
+                     VIEW CART</button>
+                  </div>
+                  <!--kết thúc phần thân model-->
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--kết thúc phần giỏ hàng-->
+      <!--phần foooter-->
+      <div class="footer" >
+         <div class="container">
+            <div class="row">
+               <div class="col-md-3">
+                  <a class="hd" href="">CUSTOMER SERVICE</a>
+                  <a href="">Contact Us</a>
+                  <a href="">Online Shopping</a>
+                  <a href="">Shipping and Delivery</a>
+                  <a href="">My Orders</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">ABOUT</a>
+                  <a href="">Terms & Conditions</a>
+                  <a href="">Privacy Policy</a>
+                  <a href="">Sitemap</a>
+                  <a href="">Right of Withdrawal</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">SNEAKER CENTRAL</a>
+                  <a href="">About Foot Locker</a>
+                  <a href="">Press Contacts</a>
+                  <a href="">Store Locator</a>
+                  <a href="">All Stores</a>
+                  <a href="">Newsletter</a>
+                  <a href="">Careers</a>
+               </div>
+               <div class="col-md-3">
+                  <a class="hd" href="">PAYMENT METHODS</a>
+                  <div class="row" style="margin-top: 5%">
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page1.png" alt="" style="border:  1px solid black;">
+                     </div>
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page2.png" alt="" style="border:  1px solid black;">
+                     </div>
+                     <div class="col-md-4 col-xs-4">
+                        <img src="images/checkout-page3.png" alt="" style="border:  1px solid black;">
+                     </div>
+                  </div>
+                  <div class="row" style="text-align:  center;margin-top: 5%;">
+                     <img src="images/map.png" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--kết thúc phần footer-->
+      <script>
+         $(document).ready(function () {
+         
+         
+             $('#stars li').on('mouseover', function () {
+                 var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+         
+         
+                 $(this).parent().children('li.star').each(function (e) {
+                     if (e < onStar) {
+                         $(this).addClass('hover');
+                     }
+                     else {
+                         $(this).removeClass('hover');
+                     }
+                 });
+         
+             }).on('mouseout', function () {
+                 $(this).parent().children('li.star').each(function (e) {
+                     $(this).removeClass('hover');
+                 });
+             });
+         
+         
+             $('#stars li').on('click', function () {
+                 var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+                 var stars = $(this).parent().children('li.star');
+         
+                 for (i = 0; i < stars.length; i++) {
+                     $(stars[i]).removeClass('selected');
+                 }
+         
+                 for (i = 0; i < onStar; i++) {
+                     $(stars[i]).addClass('selected');
+                 }
+         
+                 var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+                 var msg = "";
+                 if (ratingValue > 1) {
+                     msg = "Thanks! You rated this " + ratingValue + " stars.";
+                 }
+                 else {
+                     msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+                 }
+                 responseMessage(msg);
+             });
+         
+         });
+         
+         function responseMessage(msg) {
+             $('.success-box').fadeIn(200);
+             $('.success-box div.text-message').html("<span>" + msg + "</span>");
+         }
+      </script>
+   </body>
+</html>
